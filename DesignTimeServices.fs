@@ -7,6 +7,6 @@ open EntityFrameworkCore.FSharp
 type DesignTimeServices() =
     interface IDesignTimeServices with 
         member __.ConfigureDesignTimeServices(serviceCollection: IServiceCollection) = 
-            let fSharpServices= EFCoreFSharpServices() :> IDesignTimeServices
+            let fSharpServices= EFCoreFSharpServices.Default
             fSharpServices.ConfigureDesignTimeServices serviceCollection
             ()
